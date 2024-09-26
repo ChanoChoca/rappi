@@ -1,11 +1,11 @@
 package com.chanochoca.app.entity;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Table("deliveries")
 public class Delivery {
@@ -13,19 +13,18 @@ public class Delivery {
     @Id
     private Long id;
 
-    @NotEmpty(message = "Order ID is required")
-    private Long orderId;
+    @NotNull
+    private Long riderId;
 
-    @NotEmpty(message = "Delivery person ID is required")
-    private Long deliveryPersonId;
+    @NotNull
+    private Long clientId;
 
-    @NotBlank(message = "Status is required")
+    @NotNull
+    private LocalDateTime deliveryTime;
+
+    @NotNull
+    @Size(min = 1, max = 50)
     private String status;
-
-    private LocalDate deliveryDate;
-
-    @NotBlank(message = "Delivery address is required")
-    private String deliveryAddress;
 
     public Delivery() {
     }
@@ -38,43 +37,36 @@ public class Delivery {
         this.id = id;
     }
 
-    public @NotEmpty(message = "Order ID is required") Long getOrderId() {
-        return orderId;
+    public @NotNull Long getRiderId() {
+        return riderId;
     }
 
-    public void setOrderId(@NotEmpty(message = "Order ID is required") Long orderId) {
-        this.orderId = orderId;
+    public void setRiderId(@NotNull Long riderId) {
+        this.riderId = riderId;
     }
 
-    public @NotEmpty(message = "Delivery person ID is required") Long getDeliveryPersonId() {
-        return deliveryPersonId;
+    public @NotNull Long getClientId() {
+        return clientId;
     }
 
-    public void setDeliveryPersonId(@NotEmpty(message = "Delivery person ID is required") Long deliveryPersonId) {
-        this.deliveryPersonId = deliveryPersonId;
+    public void setClientId(@NotNull Long clientId) {
+        this.clientId = clientId;
     }
 
-    public @NotBlank(message = "Status is required") String getStatus() {
+    public @NotNull LocalDateTime getDeliveryTime() {
+        return deliveryTime;
+    }
+
+    public void setDeliveryTime(@NotNull LocalDateTime deliveryTime) {
+        this.deliveryTime = deliveryTime;
+    }
+
+    public @NotNull @Size(min = 1, max = 50) String getStatus() {
         return status;
     }
 
-    public void setStatus(@NotBlank(message = "Status is required") String status) {
+    public void setStatus(@NotNull @Size(min = 1, max = 50) String status) {
         this.status = status;
     }
-
-    public LocalDate getDeliveryDate() {
-        return deliveryDate;
-    }
-
-    public void setDeliveryDate(LocalDate deliveryDate) {
-        this.deliveryDate = deliveryDate;
-    }
-
-    public @NotBlank(message = "Delivery address is required") String getDeliveryAddress() {
-        return deliveryAddress;
-    }
-
-    public void setDeliveryAddress(@NotBlank(message = "Delivery address is required") String deliveryAddress) {
-        this.deliveryAddress = deliveryAddress;
-    }
 }
+

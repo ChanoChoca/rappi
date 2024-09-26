@@ -23,9 +23,12 @@ CREATE TABLE IF NOT EXISTS promotions (
                             name VARCHAR(100) NOT NULL,
                             discount_percentage DECIMAL(5, 2) NOT NULL CHECK (discount_percentage >= 0 AND discount_percentage <= 100),
                             start_date DATE NOT NULL,
-                            end_date DATE NOT NULL CHECK (end_date > start_date),
+                            end_date DATE NOT NULL,
                             UNIQUE(name)
 );
+
+ALTER TABLE promotions
+    ADD CONSTRAINT promotions_chk_2 CHECK (end_date > start_date);
 
 CREATE TABLE IF NOT EXISTS promotion_products (
                                     promotion_id BIGINT,

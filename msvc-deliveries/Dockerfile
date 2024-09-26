@@ -42,7 +42,7 @@ ARG TARGET_FOLDER=/app/$MSVC_NAME/target
 # Copy the JAR file generated from the previous build stage to the current working directory in the final container
 COPY --from=builder $TARGET_FOLDER/msvc-deliveries-0.0.1-SNAPSHOT.jar .
 
-ARG PORT_APP=8001
+ARG PORT_APP=8003
 ENV PORT $PORT_APP
 
 # Expose port 8001 to allow application access

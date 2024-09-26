@@ -1,4 +1,4 @@
-ARG MSVC_NAME=msvc-orders
+ARG MSVC_NAME=msvc-riders-clients
 
 FROM openjdk:24-slim as builder
 
@@ -40,13 +40,13 @@ RUN mkdir ./logs
 ARG TARGET_FOLDER=/app/$MSVC_NAME/target
 
 # Copy the JAR file generated from the previous build stage to the current working directory in the final container
-COPY --from=builder $TARGET_FOLDER/msvc-orders-0.0.1-SNAPSHOT.jar .
+COPY --from=builder $TARGET_FOLDER/msvc-riders-clients-0.0.1-SNAPSHOT.jar .
 
-ARG PORT_APP=8002
+ARG PORT_APP=8004
 ENV PORT $PORT_APP
 
 # Expose port 8001 to allow application access
 EXPOSE $PORT
 
 # Defines the input command to run the Java application
-CMD ["java", "-jar", "msvc-orders-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "msvc-riders-clients-0.0.1-SNAPSHOT.jar"]
