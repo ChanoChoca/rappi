@@ -1,0 +1,12 @@
+<!-- payment.component.html -->
+<form id="payment-form" (submit)="handleSubmit($event)">
+  <h2>{{ productName }}</h2>
+  <p>Monto: {{ amount / 100 }} USD</p>
+
+  <div id="card-element"></div>
+
+  <button type="submit" id="submit">
+    <span id="button-text">Pagar ahora</span>
+  </button>
+  <div id="payment-message" class="hidden"></div>
+</form>
