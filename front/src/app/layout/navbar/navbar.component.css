@@ -1,0 +1,718 @@
+#rappi-web-toolbar {
+  line-height: 1.5;
+  text-size-adjust: 100%;
+  text-rendering: optimizelegibility;
+  color-scheme: light;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "kern";
+  font-family: Nunito;
+  font-weight: 400;
+
+
+  color: #2e2c36;
+
+
+  word-wrap: break-word;
+  border-width: 0px;
+  border-style: solid;
+  box-sizing: border-box;
+  display: grid;
+  position: fixed;
+  top: 0px;
+  width: 100vw;
+  background: white;
+  z-index: 999;
+  box-shadow: rgb(230, 235, 241) 0px 1px 0px 0px;
+  grid-template: "left address right" 61px / max-content max-content 1fr;
+  gap: 16px;
+}
+
+.Toolbarstyles__LeftMenu-sc-fdt2fy-1 {
+  line-height: 1.5;
+  text-size-adjust: 100%;
+  text-rendering: optimizelegibility;
+  color-scheme: light;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "kern";
+  font-family: Nunito;
+  font-weight: 400;
+
+
+  color: #2e2c36;
+
+
+  word-wrap: break-word;
+  border-width: 0px;
+  border-style: solid;
+  box-sizing: border-box;
+  grid-area: left;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  margin: 12px 0px 12px 16px;
+  gap: 16px;
+}
+
+.Toolbarstyles__HamburguerContainer-sc-fdt2fy-2 {
+  line-height: 1.5;
+  text-size-adjust: 100%;
+  text-rendering: optimizelegibility;
+  color-scheme: light;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "kern";
+  font-family: Nunito;
+  font-weight: 400;
+
+
+  color: #2e2c36;
+
+
+  word-wrap: break-word;
+  border-width: 0px;
+  border-style: solid;
+  box-sizing: border-box;
+  cursor: pointer;
+  position: relative;
+}
+
+.Toolbarstyles__HomeLogoV2-sc-fdt2fy-5 {
+  line-height: 1.5;
+  text-size-adjust: 100%;
+  text-rendering: optimizelegibility;
+  color-scheme: light;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "kern";
+  font-family: Nunito;
+  font-weight: 400;
+  word-wrap: break-word;
+  border-width: 0px;
+  border-style: solid;
+  box-sizing: border-box;
+  cursor: pointer;
+  background-color: transparent;
+  color: inherit;
+  text-decoration: inherit;
+  pointer-events: all;
+  display: block;
+}
+
+.Toolbarstyles__RappiIcon-sc-fdt2fy-4 {
+  line-height: 1.5;
+  text-size-adjust: 100%;
+  text-rendering: optimizelegibility;
+  color-scheme: light;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "kern";
+  font-family: Nunito;
+  font-weight: 400;
+  color: inherit;
+  pointer-events: all;
+  width: 48px;
+  height: 48px;
+  fill: none;
+  word-wrap: break-word;
+  border-width: 0px;
+  border-style: solid;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+}
+
+.Toolbarstyles__AddressButtonContainer-sc-fdt2fy-6 {
+  line-height: 1.5;
+  text-size-adjust: 100%;
+  text-rendering: optimizelegibility;
+  color-scheme: light;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "kern";
+  font-family: Nunito;
+  font-weight: 400;
+
+
+  color: #2e2c36;
+
+  word-wrap: break-word;
+  box-sizing: border-box;
+  grid-area: address;
+  display: flex;
+  -webkit-box-pack: center;
+  min-height: unset;
+  padding: 0px 16px;
+  border-width: 1px 1px 0px;
+  border-right-style: solid;
+  border-left-style: solid;
+  border-right-color: rgb(230, 235, 241);
+  border-left-color: rgb(230, 235, 241);
+  border-image: initial;
+  border-bottom-style: initial;
+  border-bottom-color: initial;
+  width: 100%;
+  justify-content: left;
+  border-top: 0px;
+  margin: 15px 0px;
+}
+
+.sc-fbPSWO {
+  line-height: 1.5;
+  text-size-adjust: 100%;
+  text-rendering: optimizelegibility;
+  color-scheme: light;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "kern";
+  font-family: Nunito;
+  font-weight: 400;
+
+
+  color: #2e2c36;
+
+
+  word-wrap: break-word;
+  border-width: 0px;
+  border-style: solid;
+  box-sizing: border-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  max-width: 100%;
+  cursor: pointer;
+}
+
+.sc-ckMVTt {
+  line-height: 1.5;
+  text-size-adjust: 100%;
+  text-rendering: optimizelegibility;
+  color-scheme: light;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "kern";
+  font-family: Nunito;
+  font-weight: 400;
+
+
+  color: #2e2c36;
+
+
+  word-wrap: break-word;
+  border-width: 0px;
+  border-style: solid;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  max-width: 100%;
+}
+
+.sc-fXynhf {
+  line-height: 1.5;
+  text-size-adjust: 100%;
+  text-rendering: optimizelegibility;
+  color-scheme: light;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "kern";
+  font-family: Nunito;
+  font-weight: 400;
+  cursor: pointer;
+  word-wrap: break-word;
+  border-width: 0px;
+  border-style: solid;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: rgb(255, 68, 31);
+  max-width: 250px;
+}
+
+.sc-eCYdqJ {
+  text-size-adjust: 100%;
+  text-rendering: optimizelegibility;
+  color-scheme: light;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "kern";
+  cursor: pointer;
+  white-space: nowrap;
+  word-wrap: break-word;
+  border-width: 0px;
+  border-style: solid;
+  box-sizing: border-box;
+  font-family: Nunito;
+  font-weight: 800;
+  line-height: 1.71;
+  letter-spacing: normal;
+  color: rgb(255, 68, 31);
+  font-size: 14px;
+}
+
+.sc-dwLEzm {
+  line-height: 1.5;
+  text-size-adjust: 100%;
+  text-rendering: optimizelegibility;
+  color-scheme: light;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "kern";
+  font-family: Nunito;
+  font-weight: 400;
+
+
+  color: #2e2c36;
+
+
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  fill: none;
+  word-wrap: break-word;
+  border-width: 0px;
+  border-style: solid;
+  box-sizing: border-box;
+  display: block;
+  margin-left: 4px;
+}
+
+.Toolbarstyles__RightMenu-sc-fdt2fy-3 {
+  line-height: 1.5;
+  text-size-adjust: 100%;
+  text-rendering: optimizelegibility;
+  color-scheme: light;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "kern";
+  font-family: Nunito;
+  font-weight: 400;
+
+
+  color: #2e2c36;
+
+
+  word-wrap: break-word;
+  border-width: 0px;
+  border-style: solid;
+  box-sizing: border-box;
+  grid-area: right;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  margin: 12px 24px 12px 0px;
+  gap: 16px;
+}
+
+.sc-efBctP {
+  line-height: 1.5;
+  text-size-adjust: 100%;
+  text-rendering: optimizelegibility;
+  color-scheme: light;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "kern";
+  font-family: Nunito;
+  font-weight: 400;
+
+
+  color: #2e2c36;
+
+
+  word-wrap: break-word;
+  border-width: 0px;
+  border-style: solid;
+  box-sizing: border-box;
+  display: flex;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+.sc-jOrMOR {
+  line-height: 1.5;
+  text-size-adjust: 100%;
+  text-rendering: optimizelegibility;
+  color-scheme: light;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "kern";
+  font-family: Nunito;
+  font-weight: 400;
+
+
+  color: #2e2c36;
+
+
+  word-wrap: break-word;
+  border-width: 0px;
+  border-style: solid;
+  box-sizing: border-box;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+}
+
+.sc-cOFTSb {
+  line-height: 1.5;
+  text-size-adjust: 100%;
+  text-rendering: optimizelegibility;
+  color-scheme: light;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "kern";
+  font-family: Nunito;
+  font-weight: 400;
+
+
+  color: #2e2c36;
+
+
+  word-wrap: break-word;
+  border-width: 0px;
+  border-style: solid;
+  box-sizing: border-box;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 100%;
+  background-color: rgb(247, 248, 249);
+  min-width: calc(-664px + 100vw);
+}
+
+.sc-BeQoi {
+  line-height: 1.5;
+  text-size-adjust: 100%;
+  text-rendering: optimizelegibility;
+  color-scheme: light;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "kern";
+  font-family: Nunito;
+  font-weight: 400;
+
+
+  color: #2e2c36;
+
+
+  word-wrap: break-word;
+  border-width: 0px;
+  border-style: solid;
+  box-sizing: border-box;
+  background-color: rgb(247, 248, 249);
+  display: flex;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.sc-hiMGwR {
+  line-height: 1.5;
+  text-size-adjust: 100%;
+  text-rendering: optimizelegibility;
+  color-scheme: light;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "kern";
+  font-family: Nunito;
+  font-weight: 400;
+
+
+  color: #2e2c36;
+
+
+  fill: none;
+  word-wrap: break-word;
+  border-width: 0px;
+  border-style: solid;
+  box-sizing: border-box;
+  display: block;
+  vertical-align: middle;
+  height: 24px;
+  width: 24px;
+  margin: 10px 4px 10px 16px;
+}
+
+.sc-ciZhAO {
+  line-height: 1.5;
+  text-size-adjust: 100%;
+  text-rendering: optimizelegibility;
+  color-scheme: light;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "kern";
+  font-family: Nunito;
+  font-weight: 400;
+
+
+  color: #2e2c36;
+
+
+  word-wrap: break-word;
+  border-width: 0px;
+  border-style: solid;
+  box-sizing: border-box;
+  width: 100%;
+  position: relative;
+}
+
+#input {
+  text-size-adjust: 100%;
+  color-scheme: light;
+  -webkit-font-smoothing: antialiased;
+  word-wrap: break-word;
+  margin: 0px;
+  font-family: Nunito;
+  font-weight: 400;
+  font-size: 14px;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.71;
+  letter-spacing: normal;
+  text-align: left;
+  box-sizing: border-box;
+  color: rgb(46, 44, 54);
+  background-color: rgb(247, 248, 249);
+  padding: 12px 20px 12px 12px;
+  caret-color: rgb(41, 216, 132);
+  grid-area: input;
+  border: none;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  height: 48px;
+  max-width: 100%;
+  width: 100%;
+  border-radius: 8px;
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+.sc-lbxAil {
+  line-height: 1.5;
+  text-size-adjust: 100%;
+  text-rendering: optimizelegibility;
+  color-scheme: light;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "kern";
+  font-family: Nunito;
+  font-weight: 400;
+  word-wrap: break-word;
+  box-sizing: border-box;
+  background-color: transparent;
+  color: inherit;
+  text-decoration: inherit;
+  grid-area: button;
+  border-radius: 10px;
+  border: none;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  margin: 4px;
+  width: 46px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.sc-jgbSNz {
+  line-height: 1.5;
+  text-size-adjust: 100%;
+  text-rendering: optimizelegibility;
+  color-scheme: light;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "kern";
+  font-family: Nunito;
+  font-weight: 400;
+  color: inherit;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  word-wrap: break-word;
+  border-width: 0px;
+  border-style: solid;
+  box-sizing: border-box;
+  display: block;
+  fill: rgb(255, 68, 31);
+}
+
+.hNlrNc  {
+  text-size-adjust: 100%;
+  text-rendering: optimizelegibility;
+  color-scheme: light;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "kern";
+  word-wrap: break-word;
+  border-width: 0px;
+  border-style: solid;
+  box-sizing: border-box;
+  cursor: pointer;
+  background-color: transparent;
+  text-decoration: inherit;
+  font-size: 14px;
+  font-family: Nunito;
+  font-weight: 800;
+  line-height: 1.71;
+  letter-spacing: normal;
+  color: rgb(106, 105, 110);
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.Toolbarstyles__AccountLinkText-sc-fdt2fy-16 {
+  text-size-adjust: 100%;
+  text-rendering: optimizelegibility;
+  color-scheme: light;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "kern";
+  cursor: pointer;
+  font-size: 14px;
+  font-family: Nunito;
+  font-weight: 800;
+  line-height: 1.71;
+  letter-spacing: normal;
+  color: rgb(106, 105, 110);
+  word-wrap: break-word;
+  border-width: 0px;
+  border-style: solid;
+  box-sizing: border-box;
+  display: block;
+}
+
+.Toolbarstyles__BasketButtonContainerV2-sc-fdt2fy-8 {
+  line-height: 1.5;
+  text-size-adjust: 100%;
+  text-rendering: optimizelegibility;
+  color-scheme: light;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "kern";
+  font-family: Nunito;
+  font-weight: 400;
+
+
+  color: #2e2c36;
+
+
+  word-wrap: break-word;
+  border-width: 0px;
+  border-style: solid;
+  box-sizing: border-box;
+  border-left: 1px solid rgb(230, 235, 241);
+  margin: 25px 0px;
+  padding-left: 16px;
+}
+
+.sc-jIAOiI {
+  line-height: 1.5;
+  text-size-adjust: 100%;
+  text-rendering: optimizelegibility;
+  color-scheme: light;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "kern";
+  font-family: Nunito;
+  font-weight: 400;
+
+
+  color: #2e2c36;
+
+
+  word-wrap: break-word;
+  border-width: 0px;
+  border-style: solid;
+  box-sizing: border-box;
+}
+
+.sc-bczRLJ {
+  text-size-adjust: 100%;
+  color-scheme: light;
+  -webkit-font-smoothing: antialiased;
+  word-wrap: break-word;
+  box-sizing: border-box;
+  -webkit-appearance: button;
+  margin: 0px;
+  overflow: visible;
+  text-transform: none;
+  letter-spacing: normal;
+  text-align: center;
+  white-space: nowrap;
+  border-radius: 8px;
+  object-fit: contain;
+  position: relative;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0px;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  height: 36px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.sc-dkzDqf {
+  text-size-adjust: 100%;
+  color-scheme: light;
+  -webkit-font-smoothing: antialiased;
+  text-transform: none;
+  letter-spacing: normal;
+  text-align: center;
+  white-space: nowrap;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  word-wrap: break-word;
+  width: 100%;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  font-stretch: normal;
+  font-style: normal;
+  outline: none;
+  box-sizing: content-box;
+  border: 1px solid rgb(255, 255, 255);
+}
+
+.shopping-card-icon {
+  text-size-adjust: 100%;
+  color-scheme: light;
+  -webkit-font-smoothing: antialiased;
+  text-transform: none;
+  letter-spacing: normal;
+  text-align: center;
+  white-space: nowrap;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  font-stretch: normal;
+  font-style: normal;
+  width: 24px;
+  height: 24px;
+  fill: none;
+  word-wrap: break-word;
+  border-width: 0px;
+  border-style: solid;
+  box-sizing: border-box;
+  display: block;
+}

@@ -2,11 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { StripeService } from './stripe.service';
 import { loadStripe } from '@stripe/stripe-js';
 import { environment } from "../environments/environment";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-stripe',
   standalone: true,
-  imports: [],
+  imports: [
+    RouterLink
+  ],
   templateUrl: './stripe.component.html',
   styleUrl: './stripe.component.css'
 })
