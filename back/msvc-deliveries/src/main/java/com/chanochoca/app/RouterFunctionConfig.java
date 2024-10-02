@@ -20,14 +20,4 @@ public class RouterFunctionConfig {
                 .DELETE("/deliveries/{id}", deliveryHandler::deleteDelivery)
                 .build();
     }
-
-//    @Bean
-//    public RouterFunction<ServerResponse> packageRoutes(PackageHandler packageHandler) {
-//        return route()
-//                .GET("/packages", packageHandler::getAllPackages)
-//                .GET("/packages/{id}", packageHandler::getPackageById)
-//                .POST("/packages", packageHandler::createPackage)
-//                .DELETE("/packages/{id}", packageHandler::deletePackage)
-//                .build();
-//    }
 }

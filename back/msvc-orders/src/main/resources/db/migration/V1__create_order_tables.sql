@@ -1,25 +1,24 @@
-CREATE TABLE orders (
-                        id BIGINT AUTO_INCREMENT,
-                        user_id VARCHAR(36) NOT NULL,
-                        order_date DATE NOT NULL,
-                        total_price DECIMAL(10, 2) NOT NULL,
-                        status VARCHAR(255) NOT NULL,
-                        PRIMARY KEY (id));
-
-CREATE TABLE orders_products (
-                              id BIGINT AUTO_INCREMENT,
-                              product_id BIGINT UNIQUE,
-                              order_id BIGINT REFERENCES orders(id),
-                              PRIMARY KEY (id)
+CREATE TABLE IF NOT EXISTS orders (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    user_id VARCHAR(36) NOT NULL,
+    order_date DATE NOT NULL,
+    total_price DECIMAL(10, 2) NOT NULL,
+    status VARCHAR(255) NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS orders_products (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    product_id BIGINT NOT NULL,
+    order_id BIGINT NOT NULL,
+    FOREIGN KEY (order_id) REFERENCES orders(id) ON DELETE CASCADE
+);
 
-CREATE TABLE payments (
+CREATE TABLE IF NOT EXISTS payments (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     description VARCHAR(255) NOT NULL,
-    amount INT NOT NULL,
+    amount DECIMAL(10, 2) NOT NULL,
     currency VARCHAR(3) NOT NULL,
     stripe_email VARCHAR(255) NOT NULL,
-    transaction_id VARCHAR(255) NOT NULL,
+    transaction_id VARCHAR(255) NOT NULL UNIQUE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
