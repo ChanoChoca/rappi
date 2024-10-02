@@ -1,6 +1,6 @@
 package com.chanochoca.app.services;
 
-import com.chanochoca.app.entity.Category;
+import com.chanochoca.app.entity.models.Category;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 

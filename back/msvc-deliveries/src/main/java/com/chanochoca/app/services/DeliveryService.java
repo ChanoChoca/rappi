@@ -1,6 +1,6 @@
 package com.chanochoca.app.services;
 
-import com.chanochoca.app.entity.Delivery;
+import com.chanochoca.app.entity.models.Delivery;
 import com.chanochoca.app.repositories.DeliveryRepository;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;

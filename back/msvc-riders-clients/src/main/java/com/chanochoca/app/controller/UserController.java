@@ -64,4 +64,19 @@ public class UserController {
         request.getSession().invalidate();
         return ResponseEntity.ok().body(Map.of("logoutUrl", logoutUrl));
     }
+
+
+
+
+    @GetMapping("/{id}")
+    public ResponseEntity<ReadUserDTO> getUserById(@PathVariable Long id) {
+        try {
+            User user = userService.getUserById(id);
+            ReadUserDTO userDTO = userService.getByPublicId(user.getPublicId())
+                    .orElseThrow();
+            return ResponseEntity.ok(userDTO);
+        } catch (Exception e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
 }

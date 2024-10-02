@@ -1,13 +1,16 @@
 package com.chanochoca.app.entity.models;
 
+import com.chanochoca.app.entity.Product;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Positive;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.relational.core.mapping.Table;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Table("orders")
@@ -16,8 +19,7 @@ public class Order {
     @Id
     private Long id;
 
-    @NotEmpty(message = "User ID is required")
-    private Long userId;
+    private String userId;
 
     @NotEmpty(message = "Order date is required")
     private LocalDate orderDate;
@@ -28,7 +30,11 @@ public class Order {
     @NotBlank(message = "Status is required")
     private String status;
 
-    private List<OrderItem> items;
+    @Transient
+    private List<OrderProduct> orderProducts;
+
+    @Transient
+    private List<Product> products;
 
     public Order() {
     }
@@ -41,11 +47,11 @@ public class Order {
         this.id = id;
     }
 
-    public @NotEmpty(message = "User ID is required") Long getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(@NotEmpty(message = "User ID is required") Long userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
@@ -73,11 +79,30 @@ public class Order {
         this.status = status;
     }
 
-    public List<OrderItem> getItems() {
-        return items;
+    public void addOrderProduct(OrderProduct orderProduct) {
+        if (orderProducts == null) {
+            orderProducts = new ArrayList<>();
+        }
+        this.orderProducts.add(orderProduct);
     }
 
-    public void setItems(List<OrderItem> items) {
-        this.items = items;
+    public void removeOrderProduct(OrderProduct orderProduct) {
+        this.orderProducts.remove(orderProduct);
+    }
+
+    public List<OrderProduct> getOrderProducts() {
+        return orderProducts;
+    }
+
+    public void setOrderProducts(List<OrderProduct> orderProducts) {
+        this.orderProducts = orderProducts;
+    }
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
     }
 }

@@ -1,37 +1,27 @@
 package com.chanochoca.app.entity.models;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.Positive;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
-
-@Table("payments")
+@Table("payments") // Nombre de la tabla en la base de datos
 public class Payment {
-
     @Id
-    private Long id;
+    private Long id; // ID autogenerado
+    private String description;
+    private int amount;
+    private String currency;
+    private String stripeEmail;
+    private String transactionId; // ID de la transacción de Stripe
 
-    @NotEmpty(message = "Order ID is required")
-    private Long orderId;
-
-    @Positive(message = "Amount must be greater than zero")
-    private BigDecimal amount;
-
-    @NotBlank(message = "Payment method is required")
-    private String paymentMethod;
-
-    private LocalDate paymentDate;
-
-    @NotBlank(message = "Status is required")
-    private String status;
-
-    public Payment() {
+    public Payment(String description, int amount, String currency, String stripeEmail, String transactionId) {
+        this.description = description;
+        this.amount = amount;
+        this.currency = currency;
+        this.stripeEmail = stripeEmail;
+        this.transactionId = transactionId;
     }
 
+    // Getters y Setters
     public Long getId() {
         return id;
     }
@@ -40,43 +30,43 @@ public class Payment {
         this.id = id;
     }
 
-    public @NotEmpty(message = "Order ID is required") Long getOrderId() {
-        return orderId;
+    public String getDescription() {
+        return description;
     }
 
-    public void setOrderId(@NotEmpty(message = "Order ID is required") Long orderId) {
-        this.orderId = orderId;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public @Positive(message = "Amount must be greater than zero") BigDecimal getAmount() {
+    public int getAmount() {
         return amount;
     }
 
-    public void setAmount(@Positive(message = "Amount must be greater than zero") BigDecimal amount) {
+    public void setAmount(int amount) {
         this.amount = amount;
     }
 
-    public @NotBlank(message = "Payment method is required") String getPaymentMethod() {
-        return paymentMethod;
+    public String getCurrency() {
+        return currency;
     }
 
-    public void setPaymentMethod(@NotBlank(message = "Payment method is required") String paymentMethod) {
-        this.paymentMethod = paymentMethod;
+    public void setCurrency(String currency) {
+        this.currency = currency;
     }
 
-    public LocalDate getPaymentDate() {
-        return paymentDate;
+    public String getStripeEmail() {
+        return stripeEmail;
     }
 
-    public void setPaymentDate(LocalDate paymentDate) {
-        this.paymentDate = paymentDate;
+    public void setStripeEmail(String stripeEmail) {
+        this.stripeEmail = stripeEmail;
     }
 
-    public @NotBlank(message = "Status is required") String getStatus() {
-        return status;
+    public String getTransactionId() {
+        return transactionId;
     }
 
-    public void setStatus(@NotBlank(message = "Status is required") String status) {
-        this.status = status;
+    public void setTransactionId(String transactionId) {
+        this.transactionId = transactionId;
     }
 }

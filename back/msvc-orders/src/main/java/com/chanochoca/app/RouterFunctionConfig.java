@@ -4,7 +4,6 @@ import com.chanochoca.app.handler.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.server.RouterFunction;
-import org.springframework.web.reactive.function.server.RouterFunctions;
 import org.springframework.web.reactive.function.server.ServerResponse;
 
 import static org.springframework.web.reactive.function.server.RequestPredicates.*;
@@ -19,29 +18,15 @@ public class RouterFunctionConfig {
     }
 
     @Bean
-    public RouterFunction<ServerResponse> orderRoutes(OrderHandler orderHandler) {
-        return route(GET("/orders"), orderHandler::getAllOrders)
-                .andRoute(GET("/orders/{id}"), orderHandler::getOrderById)
-                .andRoute(POST("/orders"), orderHandler::createOrder)
-                .andRoute(PUT("/orders/{id}"), orderHandler::updateOrder)
-                .andRoute(DELETE("/orders/{id}"), orderHandler::deleteOrder);
-    }
-
-    @Bean
-    public RouterFunction<ServerResponse> orderItemRoutes(OrderItemHandler orderItemHandler) {
-        return route(GET("/order-items"), orderItemHandler::getAllOrderItems)
-                .andRoute(GET("/order-items/{id}"), orderItemHandler::getOrderItemById)
-                .andRoute(POST("/order-items"), orderItemHandler::createOrderItem)
-                .andRoute(PUT("/order-items/{id}"), orderItemHandler::updateOrderItem)
-                .andRoute(DELETE("/order-items/{id}"), orderItemHandler::deleteOrderItem);
-    }
-
-    @Bean
-    public RouterFunction<ServerResponse> paymentRoutes(PaymentHandler paymentHandler) {
-        return route(GET("/payments"), paymentHandler::getAllPayments)
-                .andRoute(GET("/payments/{id}"), paymentHandler::getPaymentById)
-                .andRoute(POST("/payments"), paymentHandler::createPayment)
-                .andRoute(PUT("/payments/{id}"), paymentHandler::updatePayment)
-                .andRoute(DELETE("/payments/{id}"), paymentHandler::deletePayment);
+    public RouterFunction<ServerResponse> orderRoutes(OrderHandler handler) {
+        return route(GET("cursos"), handler::list)
+                .andRoute(GET("cursos/{id}"), handler::detail)
+                .andRoute(POST("cursos"), handler::create)
+                .andRoute(PUT("cursos/{id}"), handler::edit)
+                .andRoute(DELETE("cursos/{id}"), handler::delete)
+                .andRoute(PUT("cursos/asignar-usuario/{orderId}"), handler::assignProduct)
+                .andRoute(POST("cursos/crear-usuario/{orderId}"), handler::createProduct)
+                .andRoute(DELETE("cursos/eliminar-usuario/{orderId}"), handler::deleteProduct)
+                .andRoute(DELETE("cursos/eliminar-curso-usuario/{id}"), handler::deleteOrderProductById);
     }
 }

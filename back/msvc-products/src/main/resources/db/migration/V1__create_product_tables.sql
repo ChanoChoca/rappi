@@ -30,12 +30,9 @@ CREATE TABLE IF NOT EXISTS promotions (
 ALTER TABLE promotions
     ADD CONSTRAINT promotions_chk_2 CHECK (end_date > start_date);
 
-CREATE TABLE IF NOT EXISTS promotion_products (
-                                    promotion_id BIGINT,
-                                    product_id BIGINT,
-                                    PRIMARY KEY (promotion_id, product_id),
-                                    FOREIGN KEY (promotion_id) REFERENCES promotions(id),
-                                    FOREIGN KEY (product_id) REFERENCES products(id),
-                                    INDEX (promotion_id),
-                                    INDEX (product_id)
+CREATE TABLE promotions_products (
+                                 id BIGINT AUTO_INCREMENT,
+                                 product_id BIGINT UNIQUE,
+                                 promotion_id BIGINT REFERENCES promotions(id),
+                                 PRIMARY KEY (id)
 );

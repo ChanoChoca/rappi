@@ -1,6 +1,6 @@
 package com.chanochoca.app.services;
 
-import com.chanochoca.app.entity.Category;
+import com.chanochoca.app.entity.models.Category;
 import com.chanochoca.app.repositories.CategoryRepository;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;

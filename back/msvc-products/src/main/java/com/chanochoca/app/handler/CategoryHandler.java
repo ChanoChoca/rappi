@@ -1,6 +1,6 @@
 package com.chanochoca.app.handler;
 
-import com.chanochoca.app.entity.Category;
+import com.chanochoca.app.entity.models.Category;
 import com.chanochoca.app.services.CategoryService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

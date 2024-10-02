@@ -1,4 +1,4 @@
-package com.chanochoca.app.entity;
+package com.chanochoca.app.entity.models;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

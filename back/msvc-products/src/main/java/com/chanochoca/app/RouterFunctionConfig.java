@@ -6,15 +6,17 @@ import com.chanochoca.app.handler.PromotionHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.server.RouterFunction;
-import org.springframework.web.reactive.function.server.RouterFunctions;
 import org.springframework.web.reactive.function.server.ServerResponse;
+
+import static org.springframework.web.reactive.function.server.RequestPredicates.*;
+import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 
 @Configuration
 public class RouterFunctionConfig {
 
     @Bean
     public RouterFunction<ServerResponse> categoryRoutes(CategoryHandler categoryHandler) {
-        return RouterFunctions.route()
+        return route()
                 .GET("/categories", categoryHandler::getAllCategories)
                 .GET("/categories/{id}", categoryHandler::getCategoryById)
                 .POST("/categories", categoryHandler::createCategory)
@@ -25,23 +27,24 @@ public class RouterFunctionConfig {
 
     @Bean
     public RouterFunction<ServerResponse> productRoutes(ProductHandler productHandler) {
-        return RouterFunctions.route()
-                .GET("/products", productHandler::getAllProducts)
-                .GET("/products/{id}", productHandler::getProductById)
-                .POST("/products", productHandler::createProduct)
-                .PUT("/products/{id}", productHandler::updateProduct)
-                .DELETE("/products/{id}", productHandler::deleteProduct)
-                .build();
+        return route(GET("/products/products-by-order"), productHandler::getProductsByOrder)
+                .andRoute(GET("/products"), productHandler::getAllProducts)
+                .andRoute(GET("/products/{id}"), productHandler::getProductById)
+                .andRoute(POST("/products"), productHandler::createProduct)
+                .andRoute(PUT("/products/{id}"), productHandler::updateProduct)
+                .andRoute(DELETE("/products/{id}"), productHandler::deleteProduct);
     }
 
     @Bean
-    public RouterFunction<ServerResponse> promotionRoutes(PromotionHandler promotionHandler) {
-        return RouterFunctions.route()
-                .GET("/promotions", promotionHandler::getAllPromotions)
-                .GET("/promotions/{id}", promotionHandler::getPromotionById)
-                .POST("/promotions", promotionHandler::createPromotion)
-                .PUT("/promotions/{id}", promotionHandler::updatePromotion)
-                .DELETE("/promotions/{id}", promotionHandler::deletePromotion)
-                .build();
+    public RouterFunction<ServerResponse> promotionRoutes(PromotionHandler handler) {
+        return route(GET("promotions"), handler::list)
+                .andRoute(GET("promotions/{id}"), handler::detail)
+                .andRoute(POST("promotions"), handler::create)
+                .andRoute(PUT("promotions/{id}"), handler::edit)
+                .andRoute(DELETE("promotions/{id}"), handler::delete)
+                .andRoute(PUT("promotions/asignar-product/{promotionId}"), handler::assignProduct)
+                .andRoute(POST("promotions/crear-product/{promotionId}"), handler::createProduct)
+                .andRoute(DELETE("promotions/eliminar-producto/{promotionId}"), handler::deleteProduct)
+                .andRoute(DELETE("promotions/eliminar-promotion-product/{id}"), handler::deletePromotionProductById);
     }
 }

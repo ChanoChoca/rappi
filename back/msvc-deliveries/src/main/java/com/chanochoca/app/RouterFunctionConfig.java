@@ -1,7 +1,6 @@
 package com.chanochoca.app;
 
 import com.chanochoca.app.handler.DeliveryHandler;
-import com.chanochoca.app.handler.PackageHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.server.RouterFunction;
@@ -22,13 +21,13 @@ public class RouterFunctionConfig {
                 .build();
     }
 
-    @Bean
-    public RouterFunction<ServerResponse> packageRoutes(PackageHandler packageHandler) {
-        return route()
-                .GET("/packages", packageHandler::getAllPackages)
-                .GET("/packages/{id}", packageHandler::getPackageById)
-                .POST("/packages", packageHandler::createPackage)
-                .DELETE("/packages/{id}", packageHandler::deletePackage)
-                .build();
-    }
+//    @Bean
+//    public RouterFunction<ServerResponse> packageRoutes(PackageHandler packageHandler) {
+//        return route()
+//                .GET("/packages", packageHandler::getAllPackages)
+//                .GET("/packages/{id}", packageHandler::getPackageById)
+//                .POST("/packages", packageHandler::createPackage)
+//                .DELETE("/packages/{id}", packageHandler::deletePackage)
+//                .build();
+//    }
 }

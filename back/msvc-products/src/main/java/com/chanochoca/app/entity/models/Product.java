@@ -1,4 +1,4 @@
-package com.chanochoca.app.entity;
+package com.chanochoca.app.entity.models;
 
 import jakarta.validation.constraints.*;
 import org.springframework.data.annotation.Id;
@@ -26,8 +26,7 @@ public class Product {
     @NotEmpty
     private Boolean available;
 
-    @NotBlank(message = "Category is required")
-    private String category;
+    private Long categoryId;
 
     @Positive(message = "Stock must be positive")
     private Integer stock;
@@ -75,12 +74,12 @@ public class Product {
         this.available = available;
     }
 
-    public @NotBlank(message = "Category is required") String getCategory() {
-        return category;
+    public Long getCategoryId() {
+        return categoryId;
     }
 
-    public void setCategory(@NotBlank(message = "Category is required") String category) {
-        this.category = category;
+    public void setCategoryId(Long categoryId) {
+        this.categoryId = categoryId;
     }
 
     public @Positive(message = "Stock must be positive") Integer getStock() {

@@ -1,6 +1,6 @@
 package com.chanochoca.app.handler;
 
-import com.chanochoca.app.entity.Delivery;
+import com.chanochoca.app.entity.models.Delivery;
 import com.chanochoca.app.services.DeliveryService;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;

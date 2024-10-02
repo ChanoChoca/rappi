@@ -1,13 +1,15 @@
-package com.chanochoca.app.entity;
+package com.chanochoca.app.entity.models;
 
 import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.relational.core.mapping.Table;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Table("promotions")
@@ -28,7 +30,11 @@ public class Promotion {
     @FutureOrPresent(message = "End date must be in the present or future")
     private LocalDate endDate;
 
-    private List<Long> productIds; // Reference to products
+    @Transient
+    private List<PromotionProduct> promotionProducts; // Reference to products
+
+    @Transient
+    private List<Product> products;
 
     public Promotion() {
     }
@@ -73,11 +79,30 @@ public class Promotion {
         this.endDate = endDate;
     }
 
-    public List<Long> getProductIds() {
-        return productIds;
+    public void addPromotionProduct(PromotionProduct promotionProduct) {
+        if (promotionProducts == null) {
+            promotionProducts = new ArrayList<>();
+        }
+        this.promotionProducts.add(promotionProduct);
     }
 
-    public void setProductIds(List<Long> productIds) {
-        this.productIds = productIds;
+    public void removePromotionProduct(PromotionProduct promotionProduct) {
+        this.promotionProducts.remove(promotionProduct);
+    }
+
+    public List<PromotionProduct> getPromotionProducts() {
+        return promotionProducts;
+    }
+
+    public void setPromotionProducts(List<PromotionProduct> promotionProducts) {
+        this.promotionProducts = promotionProducts;
+    }
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
     }
 }
